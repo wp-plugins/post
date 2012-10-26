@@ -1,4 +1,4 @@
-=== Po.st ===
+=== Po.st: Share Buttons, Get Analytics and Generate Revenue ===
 Tags: share, post, po.st, social bookmarking, floating social widget, floating social buttons,  facebook, google plus, linkedin, pinterest, tweet, social data, blog monetization, blog revenue, social plugin, social statistics, stumbleupon, digg, del.icio.us, reddit, tumblr, wordpress
 
 Contributors: Po.st
@@ -8,15 +8,15 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Share Buttons, Get Analytics and Generate Revenue
+Po.st boosts social sharing, provides detailed analytics and monetizes the sharing that is already happening on your site.
 
 == Description ==
 
-Po.st is the only social sharing platform that generates revenue for your site and offers analytics and insight into your social audience. Po.st offers an ad unit after a user shares, that can generate up to a $25 CPM for top sites. 
+Po.st is the first and only social sharing platform that offers publishers the ability to monetize the social activity on their site. Our unique “after-the-share unit” makes it easy for publishers to generate revenue from a 300x250 ad unit that appears within the social sharing confirmation box. These units receive premium CPMs (up to $25 on top sites) and display ads from Fortune 500 companies running digital campaigns with Po.st’s parent company, RadiumOne.
 
-Po.st is highly customizable and is integrated with all major U.S. and international social networks and offers everything you need to share your content all over the world. With a quick and easy setup, you can begin sharing in no time and increasing traffic to your site while also collecting data that you keep. 
+The Po.st plugin includes access to all major social channels including Facebook, Twitter, Pinterest, Tumblr, Reddit and email. Po.st offers an array of button styles as well—choose from small, medium or large buttons, placed vertically or horizontally, with or without share counters.
 
-The Po.st dashboard provides an analysis of the virality of your content across social channels, enabling you to see the content your audience shares most, where your content is shared, how many click-backs occur from each share and geographies.
+Po.st’s analytics dashboard provides a breakdown of your site’s sharing activity, from the virality of your content across social channels to where your content is shared and how many click-backs occur from each share.
 
 == Installation ==
 
