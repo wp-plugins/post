@@ -155,7 +155,8 @@ function post_options_form() {
         list($serv, $counter) = explode(':', $servI);
         $temp[$serv] = $counter;
     }
-    $design_buttons = $temp;
+
+    $design_buttons = ksort($temp);
 
     if (empty($display_pages)){
         $display_pages = array();
