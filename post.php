@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.0
+  Version: 1.1
   Author URI: http://www.po.st/
  */
 
