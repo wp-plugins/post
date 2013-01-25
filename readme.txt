@@ -44,6 +44,7 @@ For answers to frequently asked questions, please refer to our support site at h
 If you need technical help not found on the support site email us at support@po.st.
 
 == Changelog ==
+
 = 1.1 =
 * Alphabetized the list of sharing services when customizing.
 
