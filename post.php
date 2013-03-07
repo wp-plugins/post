@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.1
+  Version: 1.2
   Author URI: http://www.po.st/
  */
 
@@ -43,10 +43,8 @@ function post_menu_items() {
 
 function post_admin_scripts(){
     wp_enqueue_script('thickbox', null,  array('jquery'));
-
-    wp_enqueue_script('jquery-ui-core');
-    wp_enqueue_script('jquery-ui-sortable');
-
+    wp_register_script( 'post-sortable-script', plugins_url('/js/jquery-sortable.js', __FILE__) );
+    wp_enqueue_script('post-sortable-script');
     wp_register_script( 'post-constructor-script', plugins_url('/js/post-constructor.js', __FILE__) );
     wp_enqueue_script('post-constructor-script');
 }
@@ -155,8 +153,8 @@ function post_options_form() {
         list($serv, $counter) = explode(':', $servI);
         $temp[$serv] = $counter;
     }
-
-    $design_buttons = ksort($temp);
+    ksort($temp);
+    $design_buttons = $temp;
 
     if (empty($display_pages)){
         $display_pages = array();
