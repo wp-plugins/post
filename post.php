@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.2
+  Version: 1.3
   Author URI: http://www.po.st/
  */
 
@@ -171,6 +171,7 @@ function post_options_form() {
 }
 
 function post_add_js_init(){
+
     $p_key = get_option('post_p_key','');
     $options = NULL;
     if (isset($_GET['preview']) && $_GET['preview']){
@@ -239,6 +240,7 @@ function post_add_widget_content($content) {
 
     if ($add_widget){
         if ($design_custom_code_on) {
+
             if ($display_custom_position_horizontal == 'above'){
                 $content = post_make_widget(get_permalink(), get_the_title(), $options) . $content;
             }
@@ -246,11 +248,17 @@ function post_add_widget_content($content) {
                 $content .= post_make_widget(get_permalink(), get_the_title(), $options);
             }
         } else {
+
             if ($design_orientation == 'horizontal') {
-                if ($display_position_horizontal == 'above'){
+
+                if (count($display_position_horizontal) > 1) {
+
+                    $content = post_make_widget(get_permalink(), get_the_title(), $options) . $content . post_make_widget(get_permalink(), get_the_title(), $options);
+                } else if ($display_position_horizontal[0] == 'above'){
+
                     $content = post_make_widget(get_permalink(), get_the_title(), $options) . $content;
-                }
-                if ($display_position_horizontal == 'below'){
+                } else if ($display_position_horizontal[0] == 'below') {
+
                     $content .= post_make_widget(get_permalink(), get_the_title(), $options);
                 }
             } else {
@@ -303,7 +311,7 @@ function post_make_widget($url='', $title='', $options=NULL){
         $design_custom_code_on = $options['post_design_custom_code_on'];
         $design_totaltype = $options['post_design_totaltype'];
     }
-
+    $display_position_horizontal = $display_position_horizontal[0];
     $out = "";
     $extra = '';
     if ($url){
@@ -345,7 +353,8 @@ function post_make_widget($url='', $title='', $options=NULL){
             }
         }
 
-        $positionClass = $positionType[$design_orientation][${"display_position_$design_orientation"}]['class'];
+        $positionClass = $positionType[$design_orientation][${"display_position_$design_orientation"}][0]['class'];
+        echo $positionClass;
         if ($design_orientation == 'vertical') {
             $out .= "<div class='{$positionClass}' style='position:fixed; margin-top:-9999px'>";
         }
@@ -375,6 +384,7 @@ function post_make_widget($url='', $title='', $options=NULL){
 }
 
 function post_ajax_preview(){
+
     if ($_POST && isset($_POST['post_action']) && $_POST['post_action'] == 'preview'){
 
         $options = get_data_from_post();
@@ -396,8 +406,16 @@ function get_data_from_post(){
 
     $options['post_display_pages'] = isset($_POST['show_on'])?$_POST['show_on']:array();
     $options['post_display_pages'] = implode(',', array_keys($options['post_display_pages']));
-
-    $options['post_display_position_horizontal'] = isset($_POST['display_position_horizontal'])?$_POST['display_position_horizontal']:'above';
+    /*if (isset($_POST['display_position_horizontal'] )){
+        if (count($_POST['display_position_horizontal']) > 1) {
+            $options['post_display_position_horizontal'] = 'both';
+        } else {
+            $options['post_display_position_horizontal'] = $options['post_display_position_horizontal'][0];
+        }
+    } else {
+        $options['post_display_position_horizontal'][0] = 'above';
+    }*/
+    $options['post_display_position_horizontal'] = isset($_POST['display_position_horizontal'] )?$_POST['display_position_horizontal']:'above';
     $options['post_display_position_vertical'] = isset($_POST['display_position_vertical'])?$_POST['display_position_vertical']:'left';
 
     $options['post_design_type'] = isset($_POST['design_type'])?$_POST['design_type']:'icon-small';

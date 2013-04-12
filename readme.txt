@@ -2,8 +2,8 @@
 Contributors: Po.st
 Tags: share, post, po.st, social bookmarking, floating social widget, floating social buttons,  facebook, google plus, linkedin, pinterest, tweet, social data, blog monetization, blog revenue, social plugin, social statistics, stumbleupon, digg, del.icio.us, reddit, tumblr, wordpress
 Requires at least: 3.4.1, 3.4.2, 3.0
-Tested up to: 3.4.1, 3.4.2,3.0
-Stable tag: 1.2
+Tested up to: 3.4.1, 3.4.2, 3.0
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,18 +24,18 @@ For an automatic installation through WordPress:
 1. Go to the 'Add New' plugins screen in your WordPress admin area
 2. Search for 'Po.st'
 3. Click 'Install Now' and activate the plugin
-4. Go to the Po.st website, http://po.st and click 'Join Now!' to get a free account and Publisher Key.
+4. Register for a free account and Publisher Key here: https://www.po.st/portal/register.
 
 For a manual installation via FTP:
 
 1. Upload the Po.st folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' screen in your WordPress admin area
-3. Go to the Po.st website, http://po.st and click 'Join Now!' to get a free account and Publisher Key.
+3. Register for a free account and Publisher Key here: https://www.po.st/portal/register.
 
 To upload the plugin through WordPress, instead of FTP:
 
 1. Upload the downloaded zip file on the 'Add New' plugins screen (see the 'Upload' tab) in your WordPress admin area and activate.
-2. Go to the Po.st website, http://po.st and click 'Join Now!' to get a free account and Publisher Key.
+2. Register for a free account and Publisher Key here: https://www.po.st/portal/register.
 
 == Frequently Asked Questions ==
 
@@ -44,8 +44,11 @@ For answers to frequently asked questions, please refer to our support site at h
 If you need technical help not found on the support site email us at support@po.st.
 
 == Changelog ==
+= 1.3 =
+* Added ability to have share buttons on top and bottom of blog posts. 
+
 = 1.2 =
-* Bug fix when re-arranging icons on Windows
+* Bug fix when re-arranging icons on Windows.
 
 = 1.1 =
 * Alphabetized the list of sharing services when customizing.

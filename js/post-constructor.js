@@ -58,22 +58,21 @@ function widgetconstructor($){
 
 	position.each(function($t){
 		var $t = $(this);
-		$('input',$t).bind('click',function(){
-		    if(!$(this).next().hasClass('selected')) {
-				$('.post-wizard__position__item',$t).removeClass('selected');
-		        $(this).next().addClass('selected');
-		        var idx = $('input',$t).index(this);
-		        if($t.hasClass('post-wizard__position__vertical')){
-		        	$('.post-wizard__position__vertical-pretext .post-wizard__position__pretext__inner').hide();
-		        	$('.post-wizard__position__vertical-pretext .post-wizard__position__pretext__inner').eq(idx).show();
-		        }
-		    }
-		});
-
 		$('label',$t).bind('click', function(){
+
 			if(!$(this).hasClass('selected')) {
-				$(this).parent().find('input').trigger('click');
-			}
+                $(this).addClass('selected');
+                $(this).parent().find('input').attr('checked', !$(this).parent().find('input').is(':checked'))
+
+			} else {
+                if (!($(this).closest('ul').find('.selected').length === 2)) {
+                    $('.post-wizard__position__item', position).addClass('selected');
+                    $('input', position).attr('checked', true)
+                }
+                $(this).removeClass('selected');
+                $(this).parent().find('input').attr('checked', false);
+            }
+
 			return false;
 		});
 
@@ -178,6 +177,7 @@ function widgetconstructor($){
 
         var form = $('#post_form');
         var iFrameLink = this;
+
         $.post(
             ajaxurl,
             form.serialize() + '&post_action=preview&action=post_ajax_preview',

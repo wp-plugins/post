@@ -14,6 +14,7 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
             var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
           })();
     </script>
+
     <h1><a href="http://po.st" class="post-home"></a> <?php _e('Po.st options', 'po.st');?></h1>
 
     <form action='' method='post' id='post_form'>
@@ -99,8 +100,8 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                 <ul class="post-wizard__position post-wizard__position__horizontal">
                     <?php foreach ($positionType['horizontal'] as $type => $data):?>
                     <li>
-                        <input type='radio' id='position-horizontal-<?php print $type?>' name='display_position_horizontal' value='<?php print $type?>' <?php if ($display_position_horizontal == $type)print 'checked="checked"';?>/>
-                        <label for='position-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if ($display_position_horizontal == $type)print ' selected';?>">
+                        <input type='checkbox' id='position-horizontal-<?php print $type?>' name='display_position_horizontal[]' value='<?php print $type?>' <?php if (in_array($type, $display_position_horizontal))print 'checked="checked"';?>/>
+                        <label for='position-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if (in_array($type, $display_position_horizontal))print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
                         </label>
@@ -110,8 +111,8 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                 <ul class="post-wizard__position post-wizard__position__vertical">
                     <?php foreach ($positionType['vertical'] as $type => $data):?>
                     <li>
-                        <input type='radio' id='position-vertical-<?php print $type?>' name='display_position_vertical' value='<?php print $type?>' <?php if ($display_position_vertical == $type)print 'checked="checked"';?>/>
-                        <label for='position-vertical-<?php print $type?>' class="post-wizard__position__item<?php if ($display_position_vertical == $type)print ' selected';?>">
+                        <input type='checkbox' id='position-vertical-<?php print $type?>' name='display_position_vertical' value='<?php print $type?>' <?php if (in_array($type, $display_position_horizontal))print 'checked="checked"';?>/>
+                        <label for='position-vertical-<?php print $type?>' class="post-wizard__position__item<?php if (in_array($type, $display_position_horizontal))print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
                         </label>
@@ -137,7 +138,7 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
 
                     <!-- // QUICK PREVIEW // -->
                     <div class="post-wizard__quickpreview">
-                        <ul class="post-wizard__quickpreview__show post-wizard__services__icons">
+                        <ul class="post-wizard__quickpreview__show post-wizard__services__icons" id="boxes">
                             <?php foreach ($design_icons as $serv => $counter): ?>
                                 <?php if (isset($avServices[$serv])): ?>
                                     <li class="post-wizard__quickpreview__show__li service-<?php print $serv?> <?php if ($counter)print 'counter';?>" name='<?php print $serv?>'>
@@ -149,7 +150,7 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                            <?php endforeach ?>
                         </ul>
 
-                        <ul class="post-wizard__quickpreview__show post-wizard__services__buttons">
+                        <ul class="post-wizard__quickpreview__show post-wizard__services__buttons" id="boxes1">
                             <?php foreach ($design_buttons as $serv => $counter): ?>
                                 <?php if (isset($avServices[$serv])): ?>
                                     <li class="post-wizard__quickpreview__show__li service-<?php print $serv?>" name='<?php print $serv?>'>
@@ -168,7 +169,7 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                     	</div>
                         <div class="post-wizard__services__icons">
                             <ul class="post-wizard__services__list">
-
+                                <?php ksort($avServices);?>
                                  <?php foreach ($avServices as $serv => $data): ?>
 
                                  <li class="post-wizard__services__li service-<?php print $serv?> <?php if (isset($design_icons[$serv])) print 'added';?>" id='service_<?php print $serv?>' data-name="<?php print $serv?>">
@@ -242,7 +243,7 @@ echo htmlentities($str);
                 <ul class="post-wizard__position  post-wizard__position__horizontal">
                     <?php foreach ($positionType['horizontal'] as $type => $data):?>
                     <li>
-                        <input type='radio' id='position-custom-horizontal-<?php print $type?>' name='display_custom_position_horizontal' value='<?php print $type?>' <?php if ($display_custom_position_horizontal == $type)print 'checked="checked"';?>/>
+                        <input type='checkbox' id='position-custom-horizontal-<?php print $type?>' name='display_custom_position_horizontal' value='<?php print $type?>' <?php if ($display_custom_position_horizontal == $type)print 'checked="checked"';?>/>
                         <label for='position-custom-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if ($display_custom_position_horizontal == $type)print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
