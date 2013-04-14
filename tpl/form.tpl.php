@@ -100,8 +100,8 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                 <ul class="post-wizard__position post-wizard__position__horizontal">
                     <?php foreach ($positionType['horizontal'] as $type => $data):?>
                     <li>
-                        <input type='checkbox' id='position-horizontal-<?php print $type?>' name='display_position_horizontal[]' value='<?php print $type?>' <?php if (in_array($type, $display_position_horizontal))print 'checked="checked"';?>/>
-                        <label for='position-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if (in_array($type, $display_position_horizontal))print ' selected';?>">
+                        <input type='checkbox' id='position-horizontal-<?php print $type?>' name='display_position_horizontal[]' value='<?php print $type?>' <?php if ((is_array($display_position_horizontal) && in_array($type, $display_position_horizontal)) || ($display_position_horizontal == $type))print 'checked="checked"';?>/>
+                        <label for='position-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if ((is_array($display_position_horizontal) && in_array($type, $display_position_horizontal)) || ($display_position_horizontal == $type))print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
                         </label>
@@ -111,8 +111,8 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
                 <ul class="post-wizard__position post-wizard__position__vertical">
                     <?php foreach ($positionType['vertical'] as $type => $data):?>
                     <li>
-                        <input type='checkbox' id='position-vertical-<?php print $type?>' name='display_position_vertical' value='<?php print $type?>' <?php if (in_array($type, $display_position_horizontal))print 'checked="checked"';?>/>
-                        <label for='position-vertical-<?php print $type?>' class="post-wizard__position__item<?php if (in_array($type, $display_position_horizontal))print ' selected';?>">
+                        <input type='radio' id='position-vertical-<?php print $type?>' name='display_position_vertical' value='<?php print $type?>' <?php if ($display_position_vertical == $type)print 'checked="checked"';?>/>
+                        <label for='position-vertical-<?php print $type?>' class="post-wizard__position__item<?php if ($display_position_vertical == $type)print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
                         </label>
