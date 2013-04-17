@@ -72,16 +72,15 @@ function widgetconstructor($){
 			}
 		});
 		$('label',$t).bind('click', function(){
-
-			if ($(this).parent().find('input').attr('name') === 'display_position_horizontal[]') {
+			if ($(this).parent().find('input').attr('name') === 'display_position_horizontal[]' || $(this).parent().find('input').attr('name') === 'display_custom_position_horizontal[]') {
 				if(!$(this).hasClass('selected')) {
 					$(this).addClass('selected');
 					$(this).parent().find('input').attr('checked', !$(this).parent().find('input').is(':checked'))
 
 				} else {
 					if (!($(this).closest('ul').find('.selected').length === 2)) {
-						$('.post-wizard__position__item', position).addClass('selected');
-						$('input', position).attr('checked', true)
+						$('.post-wizard__position__item', $t).addClass('selected');
+						$('input', $t).attr('checked', true)
 					}
 					$(this).removeClass('selected');
 					$(this).parent().find('input').attr('checked', false);

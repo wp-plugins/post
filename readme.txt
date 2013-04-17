@@ -1,9 +1,9 @@
 === Po.st: The Social Sharing Platform that Generates Revenue for Your Website ===
 Contributors: Po.st
 Tags: share, post, po.st, social bookmarking, floating social widget, floating social buttons,  facebook, google plus, linkedin, pinterest, tweet, social data, blog monetization, blog revenue, social plugin, social statistics, stumbleupon, digg, del.icio.us, reddit, tumblr, wordpress
-Requires at least: 3.4.1, 3.4.2, 3.0
-Tested up to: 3.4.1, 3.4.2, 3.0
-Stable tag: 1.3.1
+Requires at least: 3.5.1, 3.4.1, 3.4.2, 3.0
+Tested up to: 3.5.1, 3.4.1, 3.4.2, 3.0
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ For answers to frequently asked questions, please refer to our support site at h
 If you need technical help not found on the support site email us at support@po.st.
 
 == Changelog ==
+= 1.3.2 =
+* Bug fix: ability to have share buttons on top and bottom of blog posts in custom code.
+
 = 1.3.1 =
 * Bug fix.
 

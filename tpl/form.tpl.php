@@ -243,8 +243,8 @@ echo htmlentities($str);
                 <ul class="post-wizard__position  post-wizard__position__horizontal">
                     <?php foreach ($positionType['horizontal'] as $type => $data):?>
                     <li>
-                        <input type='checkbox' id='position-custom-horizontal-<?php print $type?>' name='display_custom_position_horizontal' value='<?php print $type?>' <?php if ($display_custom_position_horizontal == $type)print 'checked="checked"';?>/>
-                        <label for='position-custom-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if ($display_custom_position_horizontal == $type)print ' selected';?>">
+                        <input type='checkbox' id='position-custom-horizontal-<?php print $type?>' name='display_custom_position_horizontal[]' value='<?php print $type?>' <?php if ((is_array($display_custom_position_horizontal) && in_array($type, $display_custom_position_horizontal)) || $display_custom_position_horizontal == $type)print 'checked="checked"';?>/>
+                        <label for='position-custom-horizontal-<?php print $type?>' class="post-wizard__position__item<?php if ((is_array($display_custom_position_horizontal) && in_array($type, $display_custom_position_horizontal)) || $display_custom_position_horizontal == $type)print ' selected';?>">
                             <i class="post-wizard__position__ico <?php print $type?>"></i>
                             <span class="post-wizard__position__item__inner"><?php print $data['label']?></span>
                         </label>
