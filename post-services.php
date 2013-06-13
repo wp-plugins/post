@@ -271,12 +271,6 @@ $avServices = array(
             'class' => 'pw-button-livejournal'
             ),
         ),
-    'posterous' => array(
-        'name' => __('Posterous', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-posterous'
-            ),
-        ),
     'aollifestream' => array(
         'name' => __('AOL LifeStream', 'po.st'),
         'icon' => array(

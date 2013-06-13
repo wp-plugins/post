@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.3.2
+  Version: 1.3.3
   Author URI: http://www.po.st/
  */
 
@@ -20,12 +20,18 @@ add_action('init', 'post_options_form_save', 9999);
 add_action('admin_notices', 'post_warning');
 add_action('admin_init', 'post_add_meta_box' );
 add_action('save_post', 'post_meta_box_save');
+add_action('wp_enqueue_scripts', 'enqueue_styles' );
 
 $showOn = array(
     'list' => __('Lists of posts', 'po.st'),
     'posts' => __('Single posts', 'po.st'),
     'pages' => __('Pages', 'po.st'),
 );
+
+function enqueue_styles() {
+	wp_register_style( 'post-plugin',  plugins_url('/post-plugin.css', __FILE__), array(), '1', 'all' );
+	wp_enqueue_style( 'post-plugin' );
+}
 
 function post_menu_items() {
     if (ak_can_update_options()) {
@@ -363,7 +369,8 @@ function post_make_widget($url='', $title='', $options=NULL){
         if ($design_orientation == 'vertical') {
             $out .= "<div class='{$positionClass}' style='position:fixed; margin-top:-9999px'>";
         }
-        $out .= "<div class='pw-widget " . $postCounter . $displayTypes[$design_type]['class'] . ' ' . $orientationType[$design_orientation]['class'] . "' {$extra}>\n";
+
+        $out .= "<div pw:image='[IMAGEURL]' class='pw-widget " . $postCounter . $displayTypes[$design_type]['class'] . ' ' . $orientationType[$design_orientation]['class'] . "' {$extra}>\n";
         $type = $displayTypes[$design_type]['type'];
         foreach ($services as $serv => $data) {
             $counterStr = '';
