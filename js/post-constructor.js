@@ -30,8 +30,6 @@ function widgetconstructor($){
         }
     });
 
-    checkPinterest();
-
     $('input',orientation).bind('click',function(){
         var self = this;
         if(!$(this).next().hasClass('selected')) {
@@ -110,7 +108,6 @@ function widgetconstructor($){
             if(!preview.hasClass('post-wizard__preview_'+curType)) {
                 preview.removeClassRegEx(/^post-wizard__preview_/);
                 preview.addClass('post-wizard__preview_'+curType);
-                checkPinterest();
             }
             preview.removeClassRegEx(/^post-wizard__type_/);
             preview.addClass('post-wizard__type_'+this.value);
@@ -132,9 +129,6 @@ function widgetconstructor($){
             $t.removeClass('added');
             $('.counter',$t).removeClass('active');
             $('.post-wizard__quickpreview .post-wizard__services__'+curType,preview).find('.service-'+$t.attr('data-name')).remove();
-            if($t.attr('data-name') == 'pinterest') {
-            	pinError.hide();
-            }
         }
         else {
             $t.addClass('added');
@@ -147,9 +141,6 @@ function widgetconstructor($){
             }
             else {
                 $(newButton).prependTo('.post-wizard__quickpreview .post-wizard__services__'+curType,preview);
-            }
-            if($t.attr('data-name') == 'pinterest') {
-            	pinError.show();
             }
         }
         return false;
@@ -232,20 +223,10 @@ function widgetconstructor($){
              $('#p_key').bind('keydown', function(ev){
                 $('.post-form__pubkey_error').hide();
                 $('#p_key').removeClass('error-ip').off(ev);
-                console.info('keydown')
              })
             return false;
         }
     });
-
-    function checkPinterest(){
-    	if($('.post-wizard__quickpreview .post-wizard__services__'+curType+' .service-pinterest',preview).length > 0) {
-    		pinError.show();
-    	}
-    	else {
-    		pinError.hide();
-    	}
-    }
 
 }
 

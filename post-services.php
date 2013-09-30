@@ -88,7 +88,7 @@ $avServices = array(
         'button' => array(
             'class' => 'pw-button-facebook-like'
             ),
-        'counter' => 1,
+        'counter' => 1
         ),
     'googleplus' => array(
         'name' => __('Google+', 'po.st'),
@@ -101,7 +101,7 @@ $avServices = array(
         'button' => array(
             'class' => 'pw-button-google-plus'
             ),
-        'counter' => 1,
+        'counter' => 1
         ),
     'pinterest' => array(
         'name' => __('Pinterest', 'po.st'),
@@ -121,7 +121,7 @@ $avServices = array(
                 ),
             'local' => array(
                 )
-            ),
+            )
         ),
     'post' => array(
         'name' => __('<strong>Post</strong> (pop-up)', 'po.st'),
@@ -134,7 +134,7 @@ $avServices = array(
         'button' => array(
             'class' => 'pw-button-post-share'
             ),
-        'counter' => 1,
+        'counter' => 1
         ),
     'linkedin' => array(
         'name' => __('LinkedIn', 'po.st'),
@@ -147,7 +147,7 @@ $avServices = array(
         'button' => array(
             'class' => 'pw-button-linkedin-share'
             ),
-        'counter' => 1,
+        'counter' => 1
         ),
     'twitter' => array(
         'name' => __('Twitter', 'po.st'),
@@ -160,170 +160,225 @@ $avServices = array(
         'button' => array(
             'class' => 'pw-button-twitter-twitt'
             ),
-        'counter' => 1,
+        'counter' => 1
         ),
-
+	'stumbleupon' => array(
+		'name' => __('StumbleUpon', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-stumbleupon'
+			),
+		'expanded' => array(
+			'class' => 'pw-button-stumbleupon pw-look-native'
+				),
+			'button' => array(
+				'class' => 'pw-button-stumbleupon'
+				),
+			'counter' => 1
+		),
+	'reddit' => array(
+		'name' => __('Reddit', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-reddit'
+			),
+		'expanded' => array(
+			'class' => 'pw-button-reddit pw-look-native'
+				),
+			'button' => array(
+				'class' => 'pw-button-reddit'
+				),
+			'counter' => 1
+		),
     'email' => array(
         'name' => __('Email', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-email'
             ),
-        ),
+		'expanded' => array(
+			'class' => 'pw-button-email pw-look-native'
+				),
+			'button' => array(
+				'class' => 'pw-button-email'
+				),
+			'counter' => 1
+		),
+	'tumblr' => array(
+		'name' => __('Tumblr', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-tumblr'
+			),
+		'expanded' => array(
+			'class' => 'pw-button-tumblr pw-look-native'
+				),
+			'button' => array(
+				'class' => 'pw-button-tumblr'
+				),
+			'counter' => 1
+		),
+	'blogger' => array(
+		'name' => __('Blogger', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-blogger'
+			),
+		'expanded' => array(
+			'class' => 'pw-button-blogger pw-look-native'
+				),
+			'button' => array(
+				'class' => 'pw-button-blogger'
+				),
+			'counter' => 1
+		),
     'print' => array(
         'name' => __('Print', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-print'
-            ),
-        ),
-    'stumbleupon' => array(
-        'name' => __('StumbleUpon', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-stumbleupon'
-            ),
+            )
         ),
     'favorites' => array(
         'name' => __('Favorites', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-favorites'
-            ),
+            )
         ),
     'googlebookmarks' => array(
         'name' => __('Google Bookmarks', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-googlebookmarks'
-            ),
+            )
         ),
     'msmessenger' => array(
         'name' => __('MS Messenger', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-msmessenger'
-            ),
-        ),
-    'myspace' => array(
-        'name' => __('MySpace', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-myspace'
-            ),
+            )
         ),
     'delicious' => array(
         'name' => __('Delicious', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-delicious'
-            ),
+            )
         ),
     'digg' => array(
         'name' => __('Digg', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-digg'
-            ),
+            )
         ),
+	'viadeo' => array(
+		'name' => __('Viadeo', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-viadeo'
+			)
+		),
+	'odnoklassniki' => array(
+		'name' => __('Odnoklassniki', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-odnoklassniki'
+			)
+		),
+	'weibo' => array(
+		'name' => __('Sina Weibo', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-weibo'
+			)
+		),
+	'qzone' => array(
+		'name' => __('QZone', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-qzone'
+			)
+		),
+	'kaixin' => array(
+		'name' => __('Kaixin Repaste', 'po.st'),
+		'icon' => array(
+			'class' => 'pw-button-kaixin'
+			)
+		),
     'orkut' => array(
         'name' => __('Orkut', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-orkut'
-            ),
+            )
         ),
     'gmail' => array(
         'name' => __('GMail', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-gmail'
-            ),
+            )
         ),
-    'blogger' => array(
-        'name' => __('Blogger', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-blogger'
-            ),
-        ),
-    'reddit' => array(
-        'name' => __('Reddit', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-reddit'
-            ),
-        ),
+
+
     'yahoomail' => array(
         'name' => __('Yahoo Mail', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-yahoomail'
-            ),
+            )
         ),
-    'tumblr' => array(
-        'name' => __('Tumblr', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-tumblr'
-            ),
-        ),
-    'hotmail' => array(
-        'name' => __('Hotmail', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-hotmail'
-            ),
-        ),
+
     'aolmail' => array(
         'name' => __('AOL Mail', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-aolmail'
-            ),
+            )
         ),
     'livejournal' => array(
         'name' => __('LiveJournal', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-livejournal'
-            ),
+            )
         ),
     'aollifestream' => array(
         'name' => __('AOL LifeStream', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-aollifestream'
-            ),
+            )
         ),
     'wordpress' => array(
         'name' => __('WordPress', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-wordpress'
-            ),
+            )
         ),
     'vkontakte' => array(
         'name' => __('VKontakte', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-vkontakte'
-            ),
+            )
         ),
     'baidu' => array(
         'name' => __('Baidu', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-baidu'
-            ),
+            )
         ),
     'mailru' => array(
         'name' => __('Mail.ru', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-mailru'
-            ),
+            )
         ),
     'hyves' => array(
         'name' => __('Hyves', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-hyves'
-            ),
+            )
         ),
     'xing' => array(
         'name' => __('Xing', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-xing'
-            ),
+            )
         ),
     'meinvz' => array(
         'name' => __('MeinVZ', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-meinvz'
-            ),
+            )
         ),
     'skyrock' => array(
         'name' => __('Skyrock', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-skyrock'
-            ),
+            )
         ),
     );
     

@@ -104,9 +104,9 @@
 		document.getElementsByTagName("body")[0].appendChild(testCssEl)
 
 		alignVertical = function alignVertical () {
-			var button = dom.getByClass('ra1-pw-icon')[0];
+			var button = dom.getByClass('pw-icon')[0];
 			if(button) {
-				
+
 				checkCss = function checkCss() {
 					if(testCssEl.offsetHeight === 12 || testCssEl.offsetWidth === 14){
 						var heightContainer = container.offsetHeight;
