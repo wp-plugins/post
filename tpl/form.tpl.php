@@ -229,7 +229,7 @@ echo htmlentities($str);
 							[PAGETITLE] — shared item\'s title;<br />
 							[IMAGEURL] — link to post\'s image, mandatory for Pinterest button.</p>');?>
 
-						<p><?php _e('Additional customizations like size, share counter, systems set, etc. are available. Please refer to the <a href="http://support.po.st/entries/21447108-integration-docs-for-po-st-widget-2-1">integration guide</a> for more details.');?></p>
+						<p><?php _e('Additional customizations like size, share counter, systems set, etc. are available. Please refer to the <a href="http://support.po.st/hc/en-us/articles/200279567-Po-st-Integration-Guide">integration guide</a> for more details.');?></p>
 					</div>
 				</div>
 

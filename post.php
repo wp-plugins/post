@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.4
+  Version: 1.4.1
   Author URI: http://www.po.st/
  */
 
@@ -193,7 +193,7 @@ function post_add_js_init(){
     var s = document.createElement('script');
     s.type = 'text/javascript';
     s.async = true;
-    s.src = 'http://i.po.st/static/v3/post-widget.js#publisherKey={$p_key}';
+    s.src = ('https:' == document.location.protocol ? 'https://s' : 'http://i') + '.po.st/share/script/post-widget.js#publisherKey=$p_key}&retina=true';
     var x = document.getElementsByTagName('script')[0];
     x.parentNode.insertBefore(s, x);
 })();
@@ -444,7 +444,7 @@ function get_data_from_post(){
     foreach ($post_design_buttons as $serv => $counter) {
         $temp[] = $serv . ':' . $counter;
     }
-    
+
     $options['post_design_buttons'] = implode(',', $temp);
 
     $options['post_design_custom_code'] = isset($_POST['design_custom_code'])?$_POST['design_custom_code']:'';

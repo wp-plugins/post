@@ -245,12 +245,6 @@ $avServices = array(
             'class' => 'pw-button-googlebookmarks'
             )
         ),
-    'msmessenger' => array(
-        'name' => __('MS Messenger', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-msmessenger'
-            )
-        ),
     'delicious' => array(
         'name' => __('Delicious', 'po.st'),
         'icon' => array(
@@ -267,7 +261,11 @@ $avServices = array(
 		'name' => __('Viadeo', 'po.st'),
 		'icon' => array(
 			'class' => 'pw-button-viadeo'
-			)
+			),
+			'counter' => 1,
+		'expanded' => array(
+            'class' => 'pw-button-viadeo pw-look-native'
+            ),
 		),
 	'odnoklassniki' => array(
 		'name' => __('Odnoklassniki', 'po.st'),
@@ -293,18 +291,31 @@ $avServices = array(
 			'class' => 'pw-button-kaixin'
 			)
 		),
-    'orkut' => array(
-        'name' => __('Orkut', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-orkut'
-            )
-        ),
     'gmail' => array(
         'name' => __('GMail', 'po.st'),
         'icon' => array(
             'class' => 'pw-button-gmail'
             )
         ),
+    'pocket' => array(
+    'name' => __('Pocket', 'po.st'),
+    'icon' => array(
+        'class' => 'pw-button-pocket'
+        )
+    ),
+    'mixi' => array(
+    'name' => __('Mixi', 'po.st'),
+    'icon' => array(
+        'class' => 'pw-button-mixi'
+        ),
+        'expanded' => array(
+        			'class' => 'pw-button-mixi pw-look-native'
+        				),
+        			'button' => array(
+        				'class' => 'pw-button-mixi'
+        				),
+        			'counter' => 1
+    ),
 
 
     'yahoomail' => array(
@@ -356,12 +367,6 @@ $avServices = array(
             'class' => 'pw-button-mailru'
             )
         ),
-    'hyves' => array(
-        'name' => __('Hyves', 'po.st'),
-        'icon' => array(
-            'class' => 'pw-button-hyves'
-            )
-        ),
     'xing' => array(
         'name' => __('Xing', 'po.st'),
         'icon' => array(
@@ -381,5 +386,5 @@ $avServices = array(
             )
         ),
     );
-    
+
 ?>
