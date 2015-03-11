@@ -18,6 +18,7 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
     <h1><a href="http://po.st" class="post-home"></a> <?php _e('Po.st options', 'po.st');?></h1>
 
     <form action='' method='post' id='post_form'>
+        <input type='hidden' name='_token' value='<?php print $_token?>' />
 		 <div class='post-form__pubkey_error'><?php _e('Mandatory "Publisher Key" field cannot be left blank.', 'po.st');?></div>
 
         <h2 class="post-form__heading">
@@ -25,7 +26,6 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
         </h2>
 
         <div class="post-form__pubkey">
-
             <input type='text' name='p_key' id='p_key' value='<?php print $p_key?>' class="i-p" />
         </div>
 
