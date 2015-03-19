@@ -4,7 +4,7 @@
   Plugin URI: http://www.po.st/
   Description: Po.st makes your site social by letting your users share posts and pages with others. Po.st supports several social networks, email and languages. Check the README file for configuration options and our support site at <a href="http://support.po.st/">http://support.po.st/</a> for other inquiries.
   Author: Po.st
-  Version: 1.4.3
+  Version: 1.4.2
   Author URI: http://www.po.st/
  */
 
@@ -60,10 +60,6 @@ function post_warning() {
 	}
 }
 
-function post_csrf_error() {
-	echo "<div class='error fade' id='csrferror'><p>" . __( 'Po.st form CSRF token validation error.' ) . "</p></div>";
-}
-
 function post_add_meta_box() {
 	add_meta_box( 'post_pinterest_meta', '"Po.st" Pinterest Settings', 'post_pinterest_meta_box_content', 'page', 'advanced', 'high' );
 	add_meta_box( 'post_pinterest_meta', '"Po.st" Pinterest Settings', 'post_pinterest_meta_box_content', 'post', 'advanced', 'high' );
@@ -101,7 +97,7 @@ function post_options_form_save() {
 		$options = get_data_from_post();
 		@session_start();
 
-		if ( ! empty( $_SESSION[ '_token' ] ) and $_SESSION[ '_token' ] == $options[ 'post__token' ] ) {
+		if ( check_admin_referer( 'update-po.st-settings' ) ) {
 			if ( $_POST[ 'post_action' ] == 'save' ) {
 				update_option( 'post_p_key', trim( $options[ 'post_p_key' ] ) );
 				update_option( 'post_display_pages', $options[ 'post_display_pages' ] );
@@ -119,8 +115,6 @@ function post_options_form_save() {
 				wp_redirect( get_bloginfo( 'wpurl' ) . '/wp-admin/options-general.php?page=post.php&updated=true' );
 				exit;
 			}
-		} else {
-			add_action( 'admin_notices', 'post_csrf_error' );
 		}
 	}
 }
@@ -416,7 +410,6 @@ function get_data_from_post() {
 	global $displayTypes, $orientationType;
 
 	$options                  = array();
-	$options[ 'post__token' ] = isset( $_POST[ '_token' ] ) ? $_POST[ '_token' ] : '';
 	$options[ 'post_p_key' ]  = isset( $_POST[ 'p_key' ] ) ? $_POST[ 'p_key' ] : '';
 
 	$options[ 'post_display_pages' ] = isset( $_POST[ 'show_on' ] ) ? $_POST[ 'show_on' ] : array();

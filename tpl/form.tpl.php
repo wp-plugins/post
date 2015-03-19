@@ -18,8 +18,9 @@ global $showOn, $displayTypes, $avServices, $orientationType, $positionType;
     <h1><a href="http://po.st" class="post-home"></a> <?php _e('Po.st options', 'po.st');?></h1>
 
     <form action='' method='post' id='post_form'>
-        <input type='hidden' name='_token' value='<?php print $_token?>' />
-		 <div class='post-form__pubkey_error'><?php _e('Mandatory "Publisher Key" field cannot be left blank.', 'po.st');?></div>
+        <?php wp_nonce_field( 'update-po.st-settings' ); ?>
+
+		<div class='post-form__pubkey_error'><?php _e('Mandatory "Publisher Key" field cannot be left blank.', 'po.st');?></div>
 
         <h2 class="post-form__heading">
             <strong><?php _e('Publisher Key', 'po.st');?></strong> (mandatory)
